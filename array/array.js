@@ -52,7 +52,8 @@ function popIndex(arr, index) { //works
         return temp;
     }
 }
-function swapIndexes(arr) {
+
+function swapIndexes(arr) { //works
     if(arr.length%2 == 0) //even
     {
         for(i = 0; i < arr.length; i+=2)
