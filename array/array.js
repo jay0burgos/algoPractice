@@ -73,6 +73,39 @@ function swapIndexes(arr) { //works
         }
     }
 }
+//get min while orginizing, only pass the array with in
+function minToFront(arr, index = 1, largestIndex = 0, max = arr.length-1){
+    
+    if(max == 0){ 
+        return
+    }
+
+    if(arr[largestIndex] <= arr[index]){ //if next index is larger, it becomes largestIndex
+        if (index == max){ //if index is equal to max, its already the largest, and if theres duplicates, it wont break the sort algo
+            minToFront(arr, 0, 0, max-1);
+        }
+        else{
+            minToFront(arr, index+1, index, max)  
+        }
+        
+
+    }
+    else{
+        if(index == max)
+        {
+            var temp = arr[index];
+            arr[index] = arr[largestIndex];
+            arr[largestIndex] = temp;
+            minToFront(arr, 0, 0, max-1);
+        }
+        else{
+            minToFront(arr, index+1, largestIndex, max)
+        }
+        
+    }
+    
+    
+}
 
 
 
@@ -80,5 +113,6 @@ function swapIndexes(arr) { //works
 //insertAt(myArray, 56, 5)
 //var poppedValue = popIndex(myArray, 3);
 //console.log(poppedValue);
-swapIndexes(myArray)
+//swapIndexes(myArray)
+minToFront(myArray);
 console.log(myArray);
