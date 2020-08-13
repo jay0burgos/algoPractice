@@ -107,12 +107,36 @@ function minToFront(arr, index = 1, largestIndex = 0, max = arr.length-1){
     
 }
 
+function reverse(arr, max = arr.length-1, min = 0){
+    if (max < min){
+        return;
+    }
+    else{
+        var temp = arr[max];
+        arr[max] = arr[min];
+        arr[min] = temp;
+        reverse(arr, max-1, min+1);
+    }
+}
+myArray= [10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
 
+function rotate(arr, num){
+    for(i=0; i < num;i++){
+        lastIndex = arr.length-1
+        temp = arr[lastIndex]
+        for(i = lastIndex; i > 0;i-- ){
+            arr[i] = arr[i-1]
+        }
+        arr[0] = temp;
+    }
+}
 
 // PopFront(myArray)
 //insertAt(myArray, 56, 5)
 //var poppedValue = popIndex(myArray, 3);
 //console.log(poppedValue);
 //swapIndexes(myArray)
-minToFront(myArray);
+//minToFront(myArray);
+//reverse(myArray)
+rotate(myArray, 1);
 console.log(myArray);
