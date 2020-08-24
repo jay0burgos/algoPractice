@@ -34,7 +34,16 @@ class linkedList {
         else
             this.head = null;
     }
-
+    findNode(val){ //finds if val is in the list
+        var currentNode = this.head;
+        for( ;currentNode != null; currentNode=currentNode.next){
+            if(currentNode.val == val){
+                return true;
+            }
+        }
+        return false;
+    }
+    
 }
 
 

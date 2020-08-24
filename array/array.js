@@ -138,5 +138,5 @@ function rotate(arr, num){
 //swapIndexes(myArray)
 //minToFront(myArray);
 //reverse(myArray)
-rotate(myArray, 1);
+rotate(myArray, 2);
 console.log(myArray);
