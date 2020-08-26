@@ -10,14 +10,15 @@ class linkedList {
         this.head = null;
         this.length = 0;
     }
-    push(val) {
-        const newNode = new node(val);
-        if(this.head != null){
+    push(val) { //pushes a new node to the front
+        var newNode = new node(val); 
+        if(this.head != null){ //if the list isnt empty execute
         console.log("pushing next")
-        this.head.next = this.head
-        console.log(this.node.next);
-        this.head = newNode;
-        this.length++;
+        var newNode = new node(val) //creates a new node
+        newNode.next = this.head //adds the head as its next variable
+        this.head = newNode //assigns the head as the new node
+        
+        this.length++;//increments length
         }
         else{
             this.head = newNode;
@@ -34,7 +35,7 @@ class linkedList {
         else
             this.head = null;
     }
-    findNode(val){ //finds if val is in the list
+    findNode(val){ //finds if val is in the list returns a boolean
         var currentNode = this.head;
         for( ;currentNode != null; currentNode=currentNode.next){
             if(currentNode.val == val){
@@ -44,6 +45,20 @@ class linkedList {
         return false;
     }
     
+    displayLenght(){
+        return this.length;
+    }
+
+    displayList(){
+        var currentNode = this.head;
+        var listString =""
+        while(currentNode){
+            listString +=currentNode.value + " ";
+            currentNode = currentNode.next;
+        }
+        return listString;
+    }
+
 }
 
 
