@@ -56,7 +56,7 @@ class linkedList {
         return this.length;
     }
 
-    displayList(){
+    displayList(){ //returns a string containin all the nodes' values
         var currentNode = this.head;
         var listString =""
         while(currentNode){
@@ -65,7 +65,50 @@ class linkedList {
         }
         return listString;
     }
-    
+    getMax(){//returns the node with highest value
+        var currentNode = this.head.next;
+        var highestNode = this.head;
+        while(currentNode){ //runs till it hits a null node
+            if(highestNode.value < currentNode){
+                highestNode = currentNode;
+            }
+            currentNode = currentNode.next;
+        }
+        return highestNode;
+    }
+
+    getMin(){ //returns the node with lowest value
+        var currentNode = this.head.next;
+        var minNode = this.head;
+        while(currentNode){ //runs till it hits a null node
+            if(minNode.value > currentNode){
+                minNode = currentNode;
+            }
+            currentNode = currentNode.next;
+        }
+        return minNode;
+    }
+
+    displayHighest(){
+        var highest =this.getMax();
+        return highest.value;
+    }
+
+    displayLowest(){
+        var lowest = this.getMin();
+        return lowest.value;
+    }
+
+    getValueAv(){ //returns average of all the values
+        var currentNode = this.head;
+        var total = 0;
+        
+        while(currentNode){ //runs till it hits a null node
+            total += currentNode.value;
+            currentNode = currentNode.next;
+        }
+        return (minNode/this.length);
+    }
 
 }
 
