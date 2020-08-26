@@ -25,6 +25,13 @@ class linkedList {
             this.length++;
         }        
     }
+
+    populate(){//used to populate the array for the sake of debugging
+        for(var i = 0;i < 15; i++ ){
+            this.push(Math.random());
+        }
+    }
+
     removeFront(){
         if(this.head.next != null){
             console.log(this.head.next.value)
@@ -58,20 +65,23 @@ class linkedList {
         }
         return listString;
     }
+    
 
 }
 
+ var newList = new linkedList();
+ newList.populate();
+ var list = newList.displayList();
+ console.log(list);
 
-newList = new linkedList()
+// newList.head = new node(5)
 
-newList.head = new node(5)
+// console.log(newList.head.next)
 
-console.log(newList.head.next)
+// newList.push(10)
 
-newList.push(10)
+// console.log(newList.head.next)
 
-console.log(newList.head.next)
+// newList.removeFront()
 
-newList.removeFront()
-
-console.log(newList.head)
+// console.log(newList.head)
