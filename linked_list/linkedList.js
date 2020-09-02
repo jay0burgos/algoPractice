@@ -120,6 +120,19 @@ function getEnd(nodeVar){
     return currentNode;
 }
 
+function deleteEnd(nodeVar){
+    var currentNode = varNode;
+    var parentNode;
+    while(currentNode.next){
+        parentNode = currentNode;
+        currentNode = currentNode.next;
+    }
+    currentNode.next = null;
+    return nodeVar;
+
+}
+
+
 
  var newList = new linkedList();
  newList.populate();
