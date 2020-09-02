@@ -113,7 +113,7 @@ class linkedList {
 }
 
 function getEnd(nodeVar){
-    var currentNode = varNode;
+    var currentNode = nodeVar;
     while(currentNode){
         currentNode = currentNode.next;
     }
@@ -132,6 +132,11 @@ function deleteEnd(nodeVar){
 
 }
 
+function addtoEnd(headNode, val){
+    lastNode = getEnd(headNode);
+    lastNode.next = new node(val);
+    return headNode;
+}
 
 
  var newList = new linkedList();
