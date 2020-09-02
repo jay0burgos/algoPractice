@@ -112,6 +112,15 @@ class linkedList {
 
 }
 
+function getEnd(nodeVar){
+    var currentNode = varNode;
+    while(currentNode){
+        currentNode = currentNode.next;
+    }
+    return currentNode;
+}
+
+
  var newList = new linkedList();
  newList.populate();
  var list = newList.displayList();
